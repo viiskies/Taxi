@@ -35,6 +35,7 @@ class Driver
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Car", inversedBy="drivers")
+     * @ORM\JoinTable(name="driver_car")
      */
     private $cars;
 

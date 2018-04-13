@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ client.id }}</td>
                 <td>{{ client.name }}</td>
-                <td>{{ client.gender ? 'Yes' : 'No' }}</td>
+                <td>{{ client.gender ? 'Male' : 'Female' }}</td>
                 <td>
                     <a href="{{ path('client_show', {'id': client.id}) }}">show</a>
                     <a href="{{ path('client_edit', {'id': client.id}) }}">edit</a>

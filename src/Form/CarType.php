@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Car;
+use App\Entity\Driver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +17,12 @@ class CarType extends AbstractType
             ->add('make')
             ->add('model')
             ->add('type')
-            ->add('drivers')
+            ->add('drivers', EntityType::class, [
+                'class' => Driver::class,
+                'choice_label' => 'name',
+                'multiple' => true,
+                'by_reference' => false
+            ])
         ;
     }
 

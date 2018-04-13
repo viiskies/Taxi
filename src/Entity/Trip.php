@@ -53,6 +53,11 @@ class Trip
         $this->client = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return '#' . $this->id . ' length: ' . $this->length;
+    }
+
     public function getId()
     {
         return $this->id;

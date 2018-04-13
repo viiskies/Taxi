@@ -9,8 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Client
 {
-    const MALE = 0;
-    const FEMALE = 1;
+    const MALE = 1;
+    const FEMALE = 0;
 
     /**
      * @ORM\Id()
