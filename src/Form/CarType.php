@@ -17,7 +17,8 @@ class CarType extends AbstractType
             ->add('make')
             ->add('model')
             ->add('type')
-            ->add('drivers', EntityType::class, [
+            ->add('drivers',
+                EntityType::class, [
                 'class' => Driver::class,
                 'choice_label' => 'name',
                 'multiple' => true,
