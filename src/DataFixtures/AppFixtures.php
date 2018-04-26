@@ -15,7 +15,6 @@ class AppFixtures extends Fixture
      */
     private $userPasswordEncoder;
 
-
     public function __construct(UserPasswordEncoderInterface $userPasswordEncoder)
     {
         $this->userPasswordEncoder = $userPasswordEncoder;
@@ -25,13 +24,15 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create();
 
-        $user = new User();
-        $user ->setUsername($faker->lastName);
-        $password = $this->userPasswordEncoder->encodePassword($user, 'vitkis');
-        $user ->setPassword($password);
-        $user ->setRoles(['ROLE_ADMIN']);
+        for ($i = 0; $i < 5; $i++) {
+            $user = new User();
+            $user->setUsername($faker->lastName);
+            $password = $this->userPasswordEncoder->encodePassword($user, 'vitkis');
+            $user->setPassword($password);
+            $user->setRoles(['ROLE_ADMIN']);
 
-        $manager->persist($user);
+            $manager->persist($user);
+        }
         $manager->flush();
     }
 }

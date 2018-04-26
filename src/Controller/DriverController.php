@@ -17,6 +17,8 @@ class DriverController extends Controller
 {
     /**
      * @Route("/", name="driver_index", methods="GET")
+     * @param DriverRepository $driverRepository
+     * @return Response
      */
     public function index(DriverRepository $driverRepository): Response
     {
@@ -25,6 +27,8 @@ class DriverController extends Controller
 
     /**
      * @Route("/new", name="driver_new", methods="GET|POST")
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -56,6 +60,9 @@ class DriverController extends Controller
 
     /**
      * @Route("/{id}/edit", name="driver_edit", methods="GET|POST")
+     * @param Request $request
+     * @param Driver $driver
+     * @return Response
      */
     public function edit(Request $request, Driver $driver): Response
     {
@@ -76,6 +83,9 @@ class DriverController extends Controller
 
     /**
      * @Route("/{id}", name="driver_delete", methods="DELETE")
+     * @param Request $request
+     * @param Driver $driver
+     * @return Response
      */
     public function delete(Request $request, Driver $driver): Response
     {
